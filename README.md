@@ -37,4 +37,4 @@ cd java-project-61
 
 [Хекслет](https://ru.hexlet.io/) — школа программирования: авторские программы обучения с практикой, поддержкой наставников и реальными проектами, которые остаются в резюме. Этот репозиторий — один из таких проектов.
 
-![alt text](1.png) ![alt text](2.png) ![alt text](3.png) ![alt text](4.png) ![alt text](5.png)![alt text](6.png)
+![alt text](1.png) ![alt text](2.png) ![alt text](3.png) ![alt text](4.png) ![alt text](5.png)![alt text](6.png)![alt text](7.png)
