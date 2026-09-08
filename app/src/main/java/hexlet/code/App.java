@@ -23,25 +23,30 @@ public class App {
         System.out.print("Your choice: ");
 
         int choice = scanner.nextInt();
-        scanner.nextLine();
 
-        if (choice == 1) {
-            Cli.greet(scanner);
-        } else if (choice == 2) {
-            String name = Cli.greet(scanner);
-            Even.play(name, scanner);
-        } else if (choice == 3) {
-            String name = Cli.greet(scanner);
-            Calc.play(name, scanner);
-        } else if (choice == 4) {
-            String name = Cli.greet(scanner);
-            Gcd.play(name, scanner);
-        } else if (choice == 5) {
-            String name = Cli.greet(scanner);
-            Progression.play(name, scanner);
-        } else if (choice == 6) {
-            String name = Cli.greet(scanner);
-            Prime.play(name, scanner);
+        switch (choice) {
+            case 1:
+                Cli.greet();
+                break;
+            case 2:
+                Even.play();
+                break;
+            case 3:
+                Calc.play();
+                break;
+            case 4:
+                Gcd.play();
+                break;
+            case 5:
+                Progression.play();
+                break;
+            case 6:
+                Prime.play();
+                break;
+            case 0:
+                break;
+            default:
+                break;
         }
     }
 }

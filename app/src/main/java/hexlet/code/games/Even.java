@@ -2,16 +2,14 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 import java.util.Random;
-import java.util.Scanner;
 
 public class Even {
 
-    public static void play(String name, Scanner scanner) {
+    public static void play() {
         Random random = new Random();
+        String[][] questionsAndAnswers = new String[Engine.ROUNDS_COUNT][2];
 
-        String[][] questionsAndAnswers = new String[3][2];
-
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
             int number = random.nextInt(100);
             String correctAnswer = number % 2 == 0 ? "yes" : "no";
 
@@ -20,9 +18,6 @@ public class Even {
         }
 
         Engine.run(
-                "Answer 'yes' if the number is even, otherwise answer 'no'.",
-                questionsAndAnswers,
-                name,
-                scanner);
+                "Answer 'yes' if the number is even, otherwise answer 'no'.", questionsAndAnswers);
     }
 }

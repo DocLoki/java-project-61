@@ -2,16 +2,14 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 import java.util.Random;
-import java.util.Scanner;
 
 public class Prime {
 
-    public static void play(String name, Scanner scanner) {
+    public static void play() {
         Random random = new Random();
+        String[][] questionsAndAnswers = new String[Engine.ROUNDS_COUNT][2];
 
-        String[][] questionsAndAnswers = new String[3][2];
-
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
             int number = random.nextInt(100) + 1;
 
             questionsAndAnswers[i][0] = String.valueOf(number);
@@ -20,9 +18,7 @@ public class Prime {
 
         Engine.run(
                 "Answer 'yes' if given number is prime. Otherwise answer 'no'.",
-                questionsAndAnswers,
-                name,
-                scanner);
+                questionsAndAnswers);
     }
 
     private static boolean isPrime(int number) {

@@ -2,45 +2,39 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 import java.util.Random;
-import java.util.Scanner;
 
 public class Progression {
 
     private static final int PROGRESSION_LENGTH = 10;
 
-    public static void play(String name, Scanner scanner) {
+    public static void play() {
         Random random = new Random();
+        String[][] questionsAndAnswers = new String[Engine.ROUNDS_COUNT][2];
 
-        String[][] questionsAndAnswers = new String[3][2];
-
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
             int start = random.nextInt(20);
             int step = random.nextInt(10) + 1;
             int hiddenIndex = random.nextInt(PROGRESSION_LENGTH);
 
-            StringBuilder progression = new StringBuilder();
-            String correctAnswer = "";
+            String[] progression = generateProgression(start, step);
+            String correctAnswer = progression[hiddenIndex];
 
-            for (int index = 0; index < PROGRESSION_LENGTH; index++) {
-                int currentElement = start + index * step;
+            progression[hiddenIndex] = "..";
 
-                if (index == hiddenIndex) {
-                    progression.append("..");
-                    correctAnswer = String.valueOf(currentElement);
-                } else {
-                    progression.append(currentElement);
-                }
-
-                if (index < PROGRESSION_LENGTH - 1) {
-                    progression.append(" ");
-                }
-            }
-
-            questionsAndAnswers[i][0] = progression.toString();
+            questionsAndAnswers[i][0] = String.join(" ", progression);
             questionsAndAnswers[i][1] = correctAnswer;
         }
 
-        Engine.run(
-                "What number is missing in the progression?", questionsAndAnswers, name, scanner);
+        Engine.run("What number is missing in the progression?", questionsAndAnswers);
+    }
+
+    private static String[] generateProgression(int start, int step) {
+        String[] progression = new String[PROGRESSION_LENGTH];
+
+        for (int index = 0; index < PROGRESSION_LENGTH; index++) {
+            progression[index] = String.valueOf(start + index * step);
+        }
+
+        return progression;
     }
 }
