@@ -1,20 +1,19 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-import java.util.Random;
+import hexlet.code.Utils;
 
 public class Calc {
 
     public static void play() {
-        Random random = new Random();
         String[][] questionsAndAnswers = new String[Engine.ROUNDS_COUNT][2];
 
         String[] operators = {"+", "-", "*"};
 
         for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
-            int firstNumber = random.nextInt(100);
-            int secondNumber = random.nextInt(100);
-            String operator = operators[random.nextInt(operators.length)];
+            int firstNumber = Utils.generateNumber(1, 100);
+            int secondNumber = Utils.generateNumber(1, 100);
+            String operator = operators[Utils.generateNumber(0, operators.length - 1)];
 
             int result = calculateExpression(firstNumber, secondNumber, operator);
 

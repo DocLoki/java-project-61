@@ -16,9 +16,9 @@ public class Engine {
 
         System.out.println(gameDescription);
 
-        for (int i = 0; i < ROUNDS_COUNT; i++) {
-            String question = questionsAndAnswers[i][0];
-            String correctAnswer = questionsAndAnswers[i][1];
+        for (String[] questionAndAnswer : questionsAndAnswers) {
+            String question = questionAndAnswer[0];
+            String correctAnswer = questionAndAnswer[1];
 
             System.out.println("Question: " + question);
             System.out.print("Your answer: ");

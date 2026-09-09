@@ -1,16 +1,15 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-import java.util.Random;
+import hexlet.code.Utils;
 
 public class Prime {
 
     public static void play() {
-        Random random = new Random();
         String[][] questionsAndAnswers = new String[Engine.ROUNDS_COUNT][2];
 
         for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
-            int number = random.nextInt(100) + 1;
+            int number = Utils.generateNumber(1, 100);
 
             questionsAndAnswers[i][0] = String.valueOf(number);
             questionsAndAnswers[i][1] = isPrime(number) ? "yes" : "no";
