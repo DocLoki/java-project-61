@@ -1,6 +1,10 @@
+
 # Игры разума (Java)
 
 [![hexlet-check](https://github.com/DocLoki/java-project-61/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/DocLoki/java-project-61/actions)
+
+[Hello World](https://github.com/DocLoki/java-project-61/actions/workflows/hello-world.yaml) ([image](https://github.com/DocLoki/java-project-61/actions/workflows/hello-world.yaml/badge.svg))
+
 
 Погрузитесь в экосистему Java, научитесь настраивать рабочее окружение. Подружитесь с Spotless (линтером и форматтером кода) и фреймворком для автоматизации сборки проектов Gradle. Поймёте, чем git отличается от GitHub, поработаете с внешними репозиториями. Получите опыт построения архитектуры полноценного приложения и написания чистого кода.
 
